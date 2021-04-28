@@ -1,5 +1,7 @@
 from chalice import Chalice
 
+import os
+
 app = Chalice(app_name='aws-chalice-tutorial')
 
 
@@ -7,6 +9,10 @@ app = Chalice(app_name='aws-chalice-tutorial')
 def index():
     return {'hello': 'world'}
 
+
+@app.lambda_function()
+def foo(event, context):
+    return {'value': os.environ.get('MY_ENV_VAR')}
 
 # The view function above will return {"hello": "world"}
 # whenever you make an HTTP GET request to '/'.

@@ -3,7 +3,10 @@
   "app_name": "aws-chalice-tutorial",
   "stages": {
     "dev": {
-      "api_gateway_stage": "api"
+      "api_gateway_stage": "api",
+      "environment_variables": {
+        "MY_ENV_VAR": "TOP LEVEL"
+      }
     }
   }
 }
