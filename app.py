@@ -1,9 +1,12 @@
 from chalice import Chalice
+from chalicelib.blueprints import extra_routes
 
 import os
 
 app = Chalice(app_name='aws-chalice-tutorial')
 
+# Blueprint registration
+app.register_blueprint(extra_routes)
 
 @app.route('/')
 def index():

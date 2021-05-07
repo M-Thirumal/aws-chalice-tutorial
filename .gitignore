@@ -2,3 +2,4 @@
 .chalice/venv/
 .idea/
 chalicelib/__pycache__/
+__pycache__/
