@@ -17,6 +17,17 @@ def index():
 def foo(event, context):
     return {'value': os.environ.get('MY_ENV_VAR')}
 
+# Pagination example
+
+
+@app.route('/pagination')
+def pagination():
+    app.log.debug("you are in Pagination!")
+    return {
+        'page': app.current_request.query_params.get('page'),
+        'limit': app.current_request.query_params.get('limit'),
+    }
+
 # The view function above will return {"hello": "world"}
 # whenever you make an HTTP GET request to '/'.
 #
